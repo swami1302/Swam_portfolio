@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export function RecruiterEasterEgg() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const RESUME_URL = "https://drive.google.com/file/d/1O_OmTTI8ymXqu2i62o_3CbHeThw9_8fy/view?usp=drive_link";
+  const RESUME_URL = "https://drive.google.com/file/d/14McipqpVnf_RR9NprpABC3RNMRCN9mct/view?usp=sharing";
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

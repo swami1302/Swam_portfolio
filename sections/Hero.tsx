@@ -7,7 +7,7 @@ import { Github, Linkedin, ChevronDown, FileText } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
-  const RESUME_URL = "https://drive.google.com/file/d/1O_OmTTI8ymXqu2i62o_3CbHeThw9_8fy/view?usp=drive_link";
+  const RESUME_URL = "https://drive.google.com/file/d/14McipqpVnf_RR9NprpABC3RNMRCN9mct/view?usp=sharing";
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen w-full px-4 overflow-hidden pt-20">
