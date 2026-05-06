@@ -59,7 +59,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.4, type: "spring" }}
         >
           <Link href="#projects">
-            <Button size="lg" className="h-12 px-8 bg-primary hover:bg-primary/90 text-white border-0 rounded-full transition-all">
+            <Button size="lg" className="h-12 px-8 bg-primary hover:bg-primary/90 border-0 rounded-full transition-all text-black">
               View Work
             </Button>
           </Link>

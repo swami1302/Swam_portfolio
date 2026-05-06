@@ -42,53 +42,54 @@ export function RecruiterEasterEgg() {
   return (
     <>
       {/* Persistent Recruiter Hint */}
-      <div className="fixed bottom-8 right-8 z-[100] hidden md:block">
+      <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100]">
         <button
           onClick={() => setIsOpen(true)}
-          className="group relative flex items-center gap-3 bg-black border border-primary/30 px-4 py-3 rounded-2xl shadow-2xl hover:border-primary transition-all duration-300 overflow-hidden"
+          className="group relative flex items-center gap-3 bg-black/80 backdrop-blur-md border border-primary/30 px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-2xl hover:border-primary transition-all duration-300 overflow-hidden"
         >
           {/* Pulse effect */}
           <span className="absolute inset-0 bg-primary/5 animate-pulse group-hover:bg-primary/10 transition-colors" />
           
-          <div className="p-2 bg-primary/10 text-primary rounded-lg">
-            <Briefcase className="w-4 h-4" />
+          <div className="p-1.5 md:p-2 bg-primary/10 text-primary rounded-lg">
+            <Briefcase className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </div>
           
-          <div className="text-left flex flex-col gap-2">
-            <div className="text-[10px] text-primary font-bold uppercase tracking-widest leading-none">
+          <div className="text-left flex flex-col gap-1 md:gap-2">
+            <div className="text-[9px] md:text-[10px] text-primary font-bold uppercase tracking-widest leading-none">
               Recruiter?
             </div>
-            <div className="text-sm font-bold text-white leading-none">
-              Press <kbd className="bg-white/10 px-1.5 py-0.5 rounded border border-white/20 text-xs font-mono uppercase">Shift + R</kbd>
+            <div className="text-xs md:text-sm font-bold text-white leading-none">
+              <span className="md:hidden">Click Here</span>
+              <span className="hidden md:inline">Press <kbd className="bg-white/10 px-1.5 py-0.5 rounded border border-white/20 text-xs font-mono uppercase">Shift + R</kbd></span>
             </div>
           </div>
 
-          <div className="ml-2">
-            <Sparkles className="w-4 h-4 text-primary animate-bounce" />
+          <div className="ml-1 md:ml-2">
+            <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary animate-bounce" />
           </div>
         </button>
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[500px] bg-card border-white/10 p-0 overflow-hidden">
-          <div className="p-8 relative">
-            <DialogHeader className="mb-6">
+        <DialogContent className="w-[95vw] sm:max-w-[500px] bg-card border-white/10 p-0 overflow-hidden rounded-2xl">
+          <div className="p-6 md:p-8 relative">
+            <DialogHeader className="mb-4 md:mb-6">
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-3 bg-primary/20 text-primary rounded-xl">
-                  <Rocket className="w-6 h-6 animate-bounce" />
+                <div className="p-2 md:p-3 bg-primary/20 text-primary rounded-xl">
+                  <Rocket className="w-5 h-5 md:w-6 md:h-6 animate-bounce" />
                 </div>
-                <DialogTitle className="text-2xl font-bold text-white">
+                <DialogTitle className="text-xl md:text-2xl font-bold text-white">
                   Recruiter Mode Activated
                 </DialogTitle>
               </div>
-              <DialogDescription className="text-base text-gray-400 leading-relaxed">
+              <DialogDescription className="text-sm md:text-base text-gray-400 leading-relaxed">
                 You found the secret handshake! Here&apos;s a quick summary of why I&apos;d be a great fit for your engineering team.
               </DialogDescription>
             </DialogHeader>
 
-            <div className="space-y-4 mb-8">
-              <h4 className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-4">The Highlights</h4>
-              <ul className="space-y-4">
+            <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <h4 className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2 md:mb-4">The Highlights</h4>
+              <ul className="space-y-3 md:space-y-4">
                 {[
                   { icon: <Code className="w-4 h-4" />, text: "Strong expertise in React, Next.js & TypeScript" },
                   { icon: <Terminal className="w-4 h-4" />, text: "Built and scaled production SaaS systems" },
@@ -102,8 +103,8 @@ export function RecruiterEasterEgg() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-center gap-3 text-gray-300"
                   >
-                    <div className="text-primary/60">{item.icon}</div>
-                    <span className="text-sm font-medium">{item.text}</span>
+                    <div className="text-primary/60 shrink-0">{item.icon}</div>
+                    <span className="text-xs md:text-sm font-medium">{item.text}</span>
                   </motion.li>
                 ))}
                 </ul>
@@ -112,7 +113,7 @@ export function RecruiterEasterEgg() {
                 <div className="flex flex-col gap-3">
                 <Button 
                 onClick={() => window.open(RESUME_URL, "_blank")}
-                className="w-full bg-primary hover:bg-primary/90 text-black font-bold h-12 rounded-xl"
+                className="w-full bg-primary hover:bg-primary/90 text-black font-bold h-11 md:h-12 rounded-xl text-sm md:text-base"
                 >
                 <FileText className="w-4 h-4 mr-2" />
                 View Resume
@@ -121,7 +122,7 @@ export function RecruiterEasterEgg() {
               <Button 
                 onClick={() => window.location.href = "mailto:swamii1413@gmail.com"}
                 variant="outline"
-                className="w-full border-white/10 hover:bg-white/5 h-12 rounded-xl text-white"
+                className="w-full border-white/10 hover:bg-white/5 h-11 md:h-12 rounded-xl text-white text-sm md:text-base"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Get in Touch

@@ -14,7 +14,6 @@ const COMMANDS = {
   skills: "List my technical expertise",
   projects: "Showcase my featured work",
   experience: "My professional journey",
-  architecture: "Jump to the system design playground",
   contact: "How to reach out to me",
   clear: "Clear the terminal screen",
 };
@@ -26,7 +25,44 @@ export function Terminal() {
     { type: "output", content: "Type 'help' to see available commands." },
   ]);
   const containerRef = useRef<HTMLDivElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  // Intersection Observer to detect if terminal is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.intersectionRatio > 0.6);
+      },
+      { threshold: [0, 0.6, 1.0] }
+    );
+
+    if (terminalRef.current) {
+      observer.observe(terminalRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Global keydown listener to focus terminal when in view
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      // Don't interfere if user is already typing in an input or using modifier keys
+      if (
+        isIntersecting && 
+        document.activeElement?.tagName !== "INPUT" && 
+        document.activeElement?.tagName !== "TEXTAREA" &&
+        !e.ctrlKey && !e.metaKey && !e.altKey &&
+        e.key.length === 1 // Only focus on character keys
+      ) {
+        inputRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown);
+  }, [isIntersecting]);
 
   // Ensure site starts at top on refresh
   useEffect(() => {
@@ -78,7 +114,7 @@ export function Terminal() {
       case "projects":
         newHistory.push({
           type: "output",
-          content: "Featured: Sorting Visualizer, Amazon Price Tracker. Type 'architecture' to see system design work.",
+          content: "Featured: Workflow Automation Builder, E-commerce SaaS Platform.",
         });
         break;
 
@@ -94,14 +130,6 @@ export function Terminal() {
           type: "output",
           content: "Email: swamii1413@gmail.com | LinkedIn: swami13 | GitHub: swami1302",
         });
-        break;
-
-      case "architecture":
-        newHistory.push({ type: "success", content: "Navigating to Architecture Diagram..." });
-        const playground = document.getElementById("playground");
-        if (playground) {
-          playground.scrollIntoView({ behavior: "smooth" });
-        }
         break;
 
       case "clear":
@@ -146,6 +174,7 @@ export function Terminal() {
 
   return (
     <div 
+      ref={terminalRef}
       className="w-full bg-black border border-white/10 rounded-xl overflow-hidden shadow-2xl font-mono text-sm md:text-base flex flex-col h-[400px] cursor-text"
       onClick={() => inputRef.current?.focus()}
     >

@@ -7,12 +7,18 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Sorting Algorithms Visualizer",
-    description: "Interactive algorithm visualization tool demonstrating Bubble Sort and Insertion Sort with HTML5 Canvas rendering. Reduced animation lag by 25%.",
-    tech: ["React", "HTML5 Canvas", "JavaScript", "CSS"],
-    github: "https://github.com/swami1302/Sorting_visualizer",
-    live: "https://sortvisualizer13.vercel.app",
-    icon: <Activity className="w-12 h-12 text-primary/50 group-hover:text-primary transition-colors" />,
+    title: "Workflow Automation Builder",
+    description: "A low-code visual workflow automation platform built with Next.js, enabling users to model multi-step business logic with a drag-and-drop canvas. Supports specialized node types with type-safe configuration.",
+    tech: ["Next.js", "@xyflow/react", "NestJS", "Prisma", "PostgreSQL", "Zod", "React Hook Form"],
+    github: "https://github.com/swami1302/workflow_automation",
+    live: "https://workflow-automation-swart.vercel.app/",
+    icon: <Rocket className="w-12 h-12 text-primary/50 group-hover:text-primary transition-colors" />,
+    points: [
+      "Built a low-code visual workflow automation platform (similar to n8n/Zapier) using Next.js and @xyflow/react, featuring a drag-and-drop canvas for modeling business logic without code",
+      "Designed 6 specialized node types (Trigger, HTTP, Binary, Delay, Log, Exit) each with Zod-validated schemas and react-hook-form for type-safe configuration",
+      "Developed a NestJS REST API with JWT authentication and Prisma ORM for persisting workflow graph state (nodes, edges, configurations) to PostgreSQL",
+      "Architected the backend to support a future BullMQ execution engine — node types like Delay and Trigger are designed with job-queue execution in mind"
+    ]
   }
 ];
 
@@ -30,13 +36,6 @@ const itemVariants: Variants = {
 };
 
 export function Projects() {
-  const scrollToArchitecture = () => {
-    const element = document.getElementById("playground");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="projects" className="w-full max-w-6xl py-32 px-4 mx-auto">
       <motion.div
@@ -133,14 +132,6 @@ export function Projects() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 mt-auto pt-8 border-t border-white/5">
-                  <Button 
-                    onClick={scrollToArchitecture}
-                    variant="outline" 
-                    className="rounded-xl border-white/10 hover:bg-white/5 hover:text-white transition-all h-12"
-                  >
-                    <Layers className="w-4 h-4 mr-2" />
-                    View Architecture
-                  </Button>
                   <div className="flex items-center px-6 rounded-xl bg-white/5 border border-white/10 text-white/40 text-sm font-medium italic h-12 cursor-default">
                     Private / Production System
                   </div>
@@ -152,79 +143,6 @@ export function Projects() {
         
         {/* Secondary Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Ongoing Project: Workflow Automation Builder */}
-          <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -8 }}
-            className="group h-full flex flex-col"
-          >
-            <div className="bg-card/50 border border-white/5 border-dashed h-full flex flex-col overflow-hidden rounded-[2rem] transition-all duration-500 hover:border-primary/30 relative">
-              <div className="absolute top-4 right-4 z-20">
-                <span className="text-[10px] font-mono bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded uppercase tracking-wider flex items-center gap-1">
-                  <span className="w-1 h-1 bg-primary rounded-full animate-pulse" />
-                  Currently Building
-                </span>
-              </div>
-
-              <div className="h-48 bg-white/[0.02] w-full flex items-center justify-center border-b border-white/5 relative overflow-hidden group-hover:bg-primary/[0.02] transition-colors duration-500">
-                <GitBranch className="w-12 h-12 text-neutral-600 group-hover:text-primary/40 transition-colors duration-500" />
-              </div>
-
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-bold text-neutral-300 group-hover:text-primary transition-colors">
-                    Workflow Automation Builder
-                  </h3>
-                </div>
-                
-                <p className="text-sm text-neutral-500 mb-6 flex-grow leading-relaxed">
-                  Building a visual workflow automation system that allows users to create trigger-based actions using a drag-and-drop interface, similar to tools like Zapier and n8n.
-                </p>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center justify-between text-[10px] uppercase tracking-widest font-bold">
-                    <span className="text-neutral-500">Milestones</span>
-                    <span className="text-primary/60">Active Dev</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs text-neutral-400">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-500/50" />
-                      <span>Core UI & Editor</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-neutral-500">
-                      <div className="w-3 h-3 rounded-full border border-neutral-700 flex items-center justify-center">
-                        <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
-                      </div>
-                      <span>Execution Engine</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {["React Flow", "TypeScript", "Zustand", "Redis"].map((t) => (
-                    <span 
-                      key={t} 
-                      className="px-3 py-1 text-[10px] font-mono rounded-full bg-white/5 text-neutral-500 border border-white/10 uppercase tracking-tighter"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-[10px] text-neutral-600 italic mb-4">
-                  * This project is currently under active development.
-                </p>
-
-                <div className="pt-6 border-t border-white/5 mt-auto">
-                  <Button disabled variant="ghost" className="w-full rounded-xl text-neutral-600 bg-white/5 cursor-not-allowed">
-                    Documentation Coming Soon
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Regular Project */}
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -232,9 +150,9 @@ export function Projects() {
               whileHover={{ y: -8 }}
               className="group h-full flex flex-col"
             >
-              <div className="bg-card border border-white/5 h-full flex flex-col overflow-hidden rounded-[2rem] transition-all duration-500 hover:border-primary/50">
+              <div className="bg-card border border-primary/20 h-full flex flex-col overflow-hidden rounded-[2rem] transition-all duration-500 hover:border-primary/50 shadow-xl">
                 
-                <div className="h-48 bg-white/5 w-full flex items-center justify-center border-b border-white/5 relative overflow-hidden group-hover:bg-primary/5 transition-colors duration-500">
+                <div className="h-48 bg-white/[0.02] w-full flex items-center justify-center border-b border-white/5 relative overflow-hidden group-hover:bg-primary/[0.03] transition-colors duration-500">
                   <div className="relative z-20 transform group-hover:scale-110 transition-transform duration-500">
                     {project.icon}
                   </div>
@@ -245,9 +163,18 @@ export function Projects() {
                     {project.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-8 flex-grow leading-relaxed">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
                     {project.description}
                   </p>
+
+                  <ul className="space-y-3 mb-8">
+                    {project.points.map((point, idx) => (
+                      <li key={idx} className="flex gap-3 text-xs text-neutral-400 leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-primary/60 shrink-0 mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                   
                   <div className="flex flex-wrap gap-2 mb-8 mt-auto">
                     {project.tech.map((t) => (
@@ -271,7 +198,7 @@ export function Projects() {
                     )}
                     {project.live && (
                       <Link href={project.live} target="_blank" className="flex-1">
-                        <Button className="w-full rounded-xl bg-primary hover:bg-primary/90 text-white transition-all h-12 shadow-[0_0_15px_-3px_rgba(62,207,142,0.4)]">
+                        <Button className="w-full rounded-xl bg-primary hover:bg-primary/90 text-black transition-all h-12 shadow-[0_0_15px_-3px_rgba(62,207,142,0.4)]">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Visit Site
                         </Button>
