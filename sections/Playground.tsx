@@ -36,6 +36,7 @@ export function Playground() {
         <div className="space-y-24">
           
           {/* Performance Optimizer */}
+          {/* 
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,8 +52,10 @@ export function Playground() {
           </motion.div>
 
           <hr className="border-white/10" />
+          */}
 
           {/* System Design Playground */}
+          {/* 
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,6 +69,7 @@ export function Playground() {
             </div>
             <SystemDesignPlayground />
           </motion.div>
+          */}
 
         </div>
       </motion.div>
