@@ -6,6 +6,7 @@ import { MotionProvider } from "@/components/motion-provider";
 import { Header } from "@/components/Header";
 import { RecruiterEasterEgg } from "@/components/interactive/RecruiterEasterEgg";
 import { ClickEffect } from "@/components/interactive/ClickEffect";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,6 +61,7 @@ export default function RootLayout({
             <RecruiterEasterEgg />
           </MotionProvider>
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
