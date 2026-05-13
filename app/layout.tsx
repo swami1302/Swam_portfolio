@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { RecruiterEasterEgg } from "@/components/interactive/RecruiterEasterEgg";
 import { ClickEffect } from "@/components/interactive/ClickEffect";
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,6 +58,7 @@ export default function RootLayout({
           <MotionProvider>
             <Header />
             {children}
+            <Toaster position="top-center" richColors />
             <ClickEffect />
             <RecruiterEasterEgg />
           </MotionProvider>

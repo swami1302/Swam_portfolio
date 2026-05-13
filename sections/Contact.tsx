@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Github, Linkedin, Send, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,9 +16,15 @@ export function Contact() {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    // Note: You should replace 'YOUR_ACCESS_KEY_HERE' with your actual Web3Forms access key
-    // Get one for free at https://web3forms.com/
-    formData.append("access_key", process.env.WEB3FORMS_ACCESS_KEY || "");
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    
+    if (!accessKey) {
+      toast.error("Web3Forms access key is missing. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your environment variables.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    formData.append("access_key", accessKey);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -29,12 +36,13 @@ export function Contact() {
 
       if (data.success) {
         setIsSuccess(true);
+        toast.success("Message sent successfully!");
         (e.target as HTMLFormElement).reset();
       } else {
-        alert("Something went wrong. Please try again.");
+        toast.error(data.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      alert("Error sending message. Please check your connection.");
+      toast.error("Error sending message. Please check your connection.");
     } finally {
       setIsSubmitting(false);
     }
