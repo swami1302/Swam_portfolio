@@ -8,6 +8,7 @@ import { RecruiterEasterEgg } from "@/components/interactive/RecruiterEasterEgg"
 import { ClickEffect } from "@/components/interactive/ClickEffect";
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -64,6 +65,7 @@ export default function RootLayout({
           </MotionProvider>
         </ThemeProvider>
         <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
