@@ -17,7 +17,7 @@ export function Contact() {
 
     const formData = new FormData(e.currentTarget);
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    
+
     if (!accessKey) {
       toast.error("Web3Forms access key is missing. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your environment variables.");
       setIsSubmitting(false);
@@ -49,7 +49,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full max-w-5xl py-32 px-4 mx-auto relative mb-20">
+    <section id="contact" className="w-full max-w-5xl px-4 mx-auto relative mb-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export function Contact() {
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed max-w-md">
               I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your visions. Feel free to reach out!
             </p>
-            
+
             <div className="space-y-6">
               <Link href="mailto:swamii1413@gmail.com" className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors -ml-4">
                 <div className="p-4 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -74,7 +74,7 @@ export function Contact() {
                 </div>
                 <ArrowRight className="w-5 h-5 text-muted-foreground opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </Link>
-              
+
               <Link href="https://linkedin.com/in/swami13" target="_blank" className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors -ml-4">
                 <div className="p-4 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Linkedin className="w-6 h-6" />
@@ -85,7 +85,7 @@ export function Contact() {
                 </div>
                 <ArrowRight className="w-5 h-5 text-muted-foreground opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </Link>
-              
+
               <Link href="https://github.com/swami1302" target="_blank" className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors -ml-4">
                 <div className="p-4 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Github className="w-6 h-6" />
@@ -98,11 +98,11 @@ export function Contact() {
               </Link>
             </div>
           </div>
-          
+
           <div className="bg-card p-8 md:p-10 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden min-h-[500px] flex items-center">
             <AnimatePresence mode="wait">
               {isSuccess ? (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -116,7 +116,7 @@ export function Contact() {
                   <p className="text-muted-foreground mb-8">
                     Thanks for reaching out. I&apos;ll get back to you as soon as possible.
                   </p>
-                  <Button 
+                  <Button
                     onClick={() => setIsSuccess(false)}
                     variant="outline"
                     className="rounded-xl border-white/10 hover:bg-white/5"
@@ -125,52 +125,52 @@ export function Contact() {
                   </Button>
                 </motion.div>
               ) : (
-                <motion.form 
+                <motion.form
                   key="form"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="space-y-6 w-full relative z-10" 
+                  className="space-y-6 w-full relative z-10"
                   onSubmit={handleSubmit}
                 >
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-white/80 ml-1">Full Name</label>
-                    <input 
-                      id="name" 
+                    <input
+                      id="name"
                       name="name"
-                      type="text" 
+                      type="text"
                       required
-                      placeholder="John Doe" 
+                      placeholder="John Doe"
                       className="w-full px-5 py-4 rounded-xl bg-background/50 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground/50 text-white"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-white/80 ml-1">Email Address</label>
-                    <input 
-                      id="email" 
+                    <input
+                      id="email"
                       name="email"
-                      type="email" 
+                      type="email"
                       required
-                      placeholder="john@example.com" 
+                      placeholder="john@example.com"
                       className="w-full px-5 py-4 rounded-xl bg-background/50 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground/50 text-white"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-white/80 ml-1">Your Message</label>
-                    <textarea 
-                      id="message" 
+                    <textarea
+                      id="message"
                       name="message"
                       required
-                      rows={4} 
-                      placeholder="How can I help you?" 
+                      rows={4}
+                      placeholder="How can I help you?"
                       className="w-full px-5 py-4 rounded-xl bg-background/50 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-muted-foreground/50 text-white"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-primary hover:bg-primary/90 text-black font-bold h-14 rounded-xl text-lg transition-all group mt-4"
                   >

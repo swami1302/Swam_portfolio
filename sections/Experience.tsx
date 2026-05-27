@@ -6,17 +6,19 @@ const experiences = [
   {
     role: "Software Developer",
     company: "Cartrabbit",
+    product: "YUKO",
     period: "July 2024 – Present",
     location: "India",
+    description: "All-in-one customer retention platform for Shopify and WooCommerce",
     achievements: [
-      "Architected and shipped an eCommerce SaaS platform and Shopify App within 12 months.",
-      "Owned and engineered ~70% of the frontend architecture using React and TypeScript.",
-      "Built merchant dashboards supporting Reviews, Loyalty, Referrals, and Membership modules.",
-      "Developed a visual workflow automation builder (similar to Zapier) using React Flow used by 50+ merchants.",
-      "Designed and implemented backend services for the Referral module using Node.js, Express, PostgreSQL, and Prisma ORM.",
-      "Improved dashboard performance by 25% and reduced onboarding friction by 35%.",
+      "Architected and shipped YUKO, a unified retention suite replacing 5+ apps with Loyalty, Referrals, Reviews, and VIP modules.",
+      "Owned and engineered ~70% of the frontend architecture using React and TypeScript, delivering a high-performance merchant dashboard.",
+      "Built a comprehensive Loyalty & Rewards system with 12+ earning rules and customizable VIP tiers to boost repeat purchases.",
+      "Developed a visual workflow automation builder using React Flow, allowing merchants to create trigger-based customer journeys.",
+      "Integrated deeply with Shopify, WooCommerce, and Klaviyo, contributing to an average 47% lift in CLV for active merchants.",
+      "Designed and implemented scalable backend services for the Referral module using Node.js, Express, and Prisma ORM.",
     ],
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "React Flow", "Shopify"],
+    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "React Flow", "Shopify", "WooCommerce"],
   },
   {
     role: "Frontend Developer Intern",
@@ -69,11 +71,16 @@ export function Experience() {
                 <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-4 gap-2">
                   <div>
                     <h3 className="font-bold text-2xl text-foreground mb-1">{exp.role}</h3>
-                    <div className="text-primary font-medium flex items-center gap-2">
-                      <span>{exp.company}</span>
+                    <div className="text-primary font-medium flex items-center gap-2 mb-1">
+                      <span>{exp.company} {exp.product && `(${exp.product})`}</span>
                       <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
                       <span className="text-sm text-muted-foreground">{exp.location}</span>
                     </div>
+                    {exp.description && (
+                      <p className="text-sm text-muted-foreground/80 font-medium italic mb-2">
+                        {exp.description}
+                      </p>
+                    )}
                   </div>
                   <span className="text-sm font-medium text-white/80 bg-white/5 border border-white/10 px-3 py-1 rounded-full whitespace-nowrap self-start">
                     {exp.period}

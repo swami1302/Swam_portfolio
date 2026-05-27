@@ -81,12 +81,13 @@ export function Projects() {
               {/* Content Side */}
               <div className="lg:col-span-7 p-8 md:p-12 flex flex-col">
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 group-hover:text-primary transition-colors">
-                  E-commerce SaaS Platform & Shopify App
+                  YUKO — All-in-one Customer Retention Platform
                 </h3>
                 
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Built a production-grade SaaS platform and Shopify application enabling merchants to manage reviews, loyalty programs, referrals, and membership systems.
-                  The platform includes a visual workflow automation builder allowing merchants to configure triggers and actions using a drag-and-drop interface.
+                  Architected and engineered YUKO, a comprehensive retention suite for Shopify and WooCommerce. 
+                  Consolidates 5+ fragmented apps into a single powerful dashboard for Loyalty, Referrals, Reviews, and VIP Tiers, 
+                  delivering a unified customer experience that drives loyalty and maximizes lifetime value.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -95,11 +96,11 @@ export function Projects() {
                     <ul className="space-y-3">
                       {[
                         "Visual Workflow Automation", 
+                        "Loyalty & Rewards (12+ Rules)", 
                         "Advanced Referral Engine", 
-                        "Loyalty & Rewards System", 
-                        "Reviews & Social Proof",
-                        "Tiered Membership Plans",
-                        "Shopify & WooCommerce Support"
+                        "Product Reviews & Social Proof",
+                        "Tiered VIP Memberships",
+                        "Shopify & WooCommerce Native"
                       ].map((f) => (
                         <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
                           <CheckCircle2 className="w-4 h-4 text-primary/60" />
@@ -112,19 +113,19 @@ export function Projects() {
                     <h4 className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-4">Business Impact</h4>
                     <div className="space-y-4">
                       <div className="bg-white/5 p-3 rounded-xl border border-white/5">
-                        <div className="text-xl font-bold text-white">50+</div>
-                        <div className="text-[10px] text-muted-foreground uppercase">Active Merchants</div>
+                        <div className="text-xl font-bold text-white">47% Lift</div>
+                        <div className="text-[10px] text-muted-foreground uppercase">Average Lift in CLV</div>
                       </div>
                       <div className="bg-white/5 p-3 rounded-xl border border-white/5">
-                        <div className="text-xl font-bold text-white">-35%</div>
-                        <div className="text-[10px] text-muted-foreground uppercase">Onboarding Friction</div>
+                        <div className="text-xl font-bold text-white">3.2x</div>
+                        <div className="text-[10px] text-muted-foreground uppercase">Repeat Purchase Rate</div>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-10">
-                  {["React", "Next.js", "TypeScript", "React Flow", "Node.js", "PostgreSQL", "Prisma", "Redis"].map((t) => (
+                  {["React", "Next.js", "TypeScript", "React Flow", "Node.js", "PostgreSQL", "Prisma", "Shopify API"].map((t) => (
                     <span key={t} className="text-[10px] font-mono bg-white/[0.03] border border-white/10 px-2.5 py-1 rounded text-white/80 uppercase tracking-tighter">
                       {t}
                     </span>
@@ -132,8 +133,14 @@ export function Projects() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 mt-auto pt-8 border-t border-white/5">
-                  <div className="flex items-center px-6 rounded-xl bg-white/5 border border-white/10 text-white/40 text-sm font-medium italic h-12 cursor-default">
-                    Private / Production System
+                  <Link href="https://yuko.so/" target="_blank">
+                    <Button className="rounded-xl bg-primary hover:bg-primary/90 text-black transition-all h-12 px-8 shadow-[0_0_15px_-3px_rgba(62,207,142,0.4)]">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Visit Landing Page
+                    </Button>
+                  </Link>
+                  <div className="flex items-center px-6 rounded-xl bg-white/5 border border-white/10 text-white/40 text-sm font-medium h-12 cursor-default">
+                    Enterprise SaaS
                   </div>
                 </div>
               </div>
