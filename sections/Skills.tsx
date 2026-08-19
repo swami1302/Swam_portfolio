@@ -23,7 +23,7 @@ const arsenal = [
     id: "backend",
     title: "Backend Development",
     icon: <Server className="w-5 h-5 text-emerald-500" />,
-    description: "Node.js, Express.js, REST APIs, GraphQL, Microservices architecture"
+    description: "Node.js, Express.js, NestJS, REST APIs, GraphQL, Microservices architecture"
   },
   {
     id: "databases",
