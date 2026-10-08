@@ -69,7 +69,7 @@ export function RecruiterEasterEgg() {
     
     // Initial console welcome
     console.log(
-      "%c👋 Hey recruiter! Thanks for checking the console.\n%cLooking for a React / SaaS engineer?\n%cLet's connect: swamii1413@gmail.com",
+      "%c👋 Hey recruiter! Thanks for checking the console.\n%cLooking for a React / SaaS engineer?\n%cLet's connect: swami.codes@gmail.com",
       "color: #3ecf8e; font-size: 20px; font-weight: bold;",
       "color: #888; font-size: 14px;",
       "color: #3ecf8e; font-size: 14px; font-weight: bold;"

@@ -36,7 +36,7 @@ Coimbatore, India
 
 ## Contact
 Phone: +91 6379388845  
-Email: swamii1413@gmail.com  
+Email: swami.codes@gmail.com  
 
 ## Links
 GitHub: https://github.com/swami1302  

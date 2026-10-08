@@ -107,7 +107,7 @@ export function Terminal() {
       case "skills":
         newHistory.push({
           type: "output",
-          content: "Frontend: React, Next.js, TS, Tailwind. Backend: Node.js, Express, PostgreSQL, Prisma. Tools: Docker, Git, Linux.",
+          content: "Frontend: React, Next.js, TS, Tailwind. Backend: Node.js, Python, FastAPI, OOP, Express, PostgreSQL, Prisma. Tools: Docker, Git, Linux.",
         });
         break;
 
@@ -128,7 +128,7 @@ export function Terminal() {
       case "contact":
         newHistory.push({
           type: "output",
-          content: "Email: swamii1413@gmail.com | LinkedIn: swami13 | GitHub: swami1302",
+          content: "Email: swami.codes@gmail.com | LinkedIn: swami13 | GitHub: swami1302",
         });
         break;
 
@@ -149,7 +149,7 @@ export function Terminal() {
           content: "EXECUTION GRANTED: Initializing recruitment sequence... Redirecting to email contact.",
         });
         setTimeout(() => {
-          window.location.href = "mailto:swamii1413@gmail.com?subject=I'd like to hire you";
+          window.location.href = "mailto:swami.codes@gmail.com?subject=I'd like to hire you";
         }, 1500);
         break;
 

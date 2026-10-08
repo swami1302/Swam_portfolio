@@ -64,13 +64,13 @@ export function Contact() {
             </p>
 
             <div className="space-y-6">
-              <Link href="mailto:swamii1413@gmail.com" className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors -ml-4">
+              <Link href="mailto:swami.codes@gmail.com" className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors -ml-4">
                 <div className="p-4 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="flex-grow">
                   <h4 className="font-semibold text-white mb-1">Email</h4>
-                  <p className="text-muted-foreground group-hover:text-white/80 transition-colors">swamii1413@gmail.com</p>
+                  <p className="text-muted-foreground group-hover:text-white/80 transition-colors">swami.codes@gmail.com</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-muted-foreground opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </Link>
