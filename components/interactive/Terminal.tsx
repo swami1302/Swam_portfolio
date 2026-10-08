@@ -107,7 +107,7 @@ export function Terminal() {
       case "skills":
         newHistory.push({
           type: "output",
-          content: "Frontend: React, Next.js, TS, Tailwind. Backend: Node.js, Python, FastAPI, OOP, Express, PostgreSQL, Prisma. Tools: Docker, Git, Linux.",
+          content: "Frontend: React, Next.js, TS, Tailwind. Backend: Node.js, Python, FastAPI, OOP, Express, BullMQ, PostgreSQL, Prisma. Tools: AWS, Docker, Git, Linux, Tmux, Vim.",
         });
         break;
 

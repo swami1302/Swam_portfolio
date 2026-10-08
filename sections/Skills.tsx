@@ -17,13 +17,13 @@ const arsenal = [
     id: "frontend",
     title: "Frontend Engineering",
     icon: <LayoutTemplate className="w-5 h-5 text-blue-500" />,
-    description: "React.js, Next.js, TypeScript, TailwindCSS, Zustand, TanStack Query, Framer Motion"
+    description: "React.js, Next.js, TypeScript, TailwindCSS, Zustand, TanStack Query"
   },
   {
     id: "backend",
     title: "Backend Development",
     icon: <Server className="w-5 h-5 text-emerald-500" />,
-    description: "Node.js, Python, FastAPI, Express.js, NestJS, OOP, REST APIs, GraphQL, Microservices architecture"
+    description: "Node.js, Python, FastAPI, Express.js, NestJS, OOP, BullMQ, REST APIs, GraphQL, Microservices architecture"
   },
   {
     id: "databases",
@@ -41,7 +41,7 @@ const arsenal = [
     id: "devops",
     title: "DevOps & Tools",
     icon: <Wrench className="w-5 h-5 text-amber-500" />,
-    description: "Docker, Git, Linux, Cloudflare, Postman, CI/CD Pipelines"
+    description: "AWS, Docker, Git, Linux, Tmux, Vim, Cloudflare, Postman, CI/CD Pipelines"
   },
 ];
 
